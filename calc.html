@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="calc.css">
+  </head>
+  <center><body>
+    <div class="background">
+    <h1>Calculator</h1>
+    
+     <textarea id="result" placeholder="The result displays here..." disabled></textarea><br>
+     <div class="form">
+    <button onclick="addToResult('9')">9</button>
+    <button onclick="addToResult('8')">8</button>
+    <button onclick="addToResult('7')">7</button>
+    <br>
+    <button onclick="addToResult('6')">6</button>
+    <button onclick="addToResult('5')">5</button>
+    <button onclick="addToResult('4')">4</button>
+    <br>
+    <button onclick="addToResult('3')">3</button>
+    <button onclick="addToResult('2')">2</button>
+    <button onclick="addToResult('1')">1</button>
+    <br>
+    <button onclick="addToResult('0')">0</button>
+    <button onclick="addToResult('+')">+</button>
+    <button onclick="addToResult('-')">-</button>
+    <br>
+    <button onclick="addToResult('*')">*</button>
+    <button onclick="addToResult('/')">/</button>
+    <button onclick="calculate()">=</button>
+    <br>
+    <button id="result" onclick="cleard()">Clear</button>
+    
+  </center>
+</div>
+</div>
+  <script>
+    function addToResult(value) {
+      document.getElementById("result").value += value;
+    }
+
+    function calculate() {
+      var result = document.getElementById("result").value;
+      try {
+        document.getElementById("result").value = eval(result);
+      } catch (error) {
+        document.getElementById("result").value = 'Error';
+      }
+    }
+  </script>
+  <script>
+    function cleard() {
+      
+      document.getElementById('result').value = '';
+    }
+  </script>
+ 
+  
+    </center>
+</html>
